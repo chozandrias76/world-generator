@@ -11,7 +11,7 @@ let
 
     myEnv = nixpkgs.buildEnv {
       name = "my-env";
-      paths = [ myRubyEnv nixpkgs.bundler nixpkgs.nodejs nixpkgs.yarn ];
+      paths = [ myRubyEnv nixpkgs.bundler nixpkgs.yarn ];
     };
 in
 nixpkgs.mkShell {
