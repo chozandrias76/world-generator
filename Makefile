@@ -17,6 +17,9 @@ restart:
 pull:
 	docker pull ghcr.io/chozandrias76/world-generator
 
+api:
+	docker-compose exec -e RAILS_ENV=test web bin/rails rswag
+
 # Show the logs of the web container
 logs:
 	$(DC) logs --follow web

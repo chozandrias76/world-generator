@@ -10,6 +10,8 @@ services:
       - redis
     networks:
       - default_network
+    volumes:
+      - "./:/app"
   db:
     image: postgres:13
     environment:
