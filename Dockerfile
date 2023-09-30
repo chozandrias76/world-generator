@@ -1,11 +1,27 @@
-# Use a minimal base image that can run your shell.nix
-FROM nixos/nix:latest
-
-# Copy Nix environment specification
-COPY shell.nix /app/shell.nix
+# Use an official Ruby runtime as a parent image
+FROM ruby:3.1.0
 
 # Set the working directory
 WORKDIR /app
 
-# Install Nix packages and enter the development environment
-CMD ["nix-shell", "--arg", "nixpkgs", "https://github.com/NixOS/nixpkgs/archive/refs/tags/23.05.tar.gz"]
+# Install dependencies
+RUN apt-get update && \
+    apt-get install -y \
+    build-essential \
+    nodejs \
+    postgresql-client && \
+    rm -rf /var/lib/apt/lists/*
+
+# Install gems
+COPY Gemfile Gemfile.lock ./
+RUN gem install bundler && \
+    bundle install --jobs 4
+
+# Copy the application code
+COPY . .
+
+# Expose ports
+EXPOSE 3000
+
+# Set the entrypoint command
+CMD ["bin/rails", "server", "-b", "0.0.0.0"]
