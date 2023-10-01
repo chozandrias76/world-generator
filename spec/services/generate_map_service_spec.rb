@@ -1,7 +1,8 @@
-require 'rspec'
+require 'spec_helper'
+require 'rails_helper'
 
-describe 'MapGenerator', type: :class do
-  subject(:map_generator) do
+describe GenerateMapService, type: :class do
+  subject(:generate_map_service) do
     described_class.new(
       width: described_class::MAP_WIDTH,
       height: described_class::MAP_HEIGHT,
@@ -12,10 +13,10 @@ describe 'MapGenerator', type: :class do
 
   describe '#generate_terrain' do
     it 'returns a valid terrain map' do
-      terrain_map = map_generator.send(:generate_terrain)
+      terrain_map = generate_map_service.send(:generate_terrain)
       expect(terrain_map).to be_an(Array)
-      expect(terrain_map.length).to eq(MAP_WIDTH)
-      expect(terrain_map[0].length).to eq(MAP_HEIGHT)
+      expect(terrain_map.length).to eq(described_class::MAP_WIDTH)
+      expect(terrain_map[0].length).to eq(described_class::MAP_HEIGHT)
 
       # You can add more specific expectations based on your knowledge
       # of how the terrain should look.
