@@ -17,6 +17,9 @@ restart:
 pull:
 	docker pull ghcr.io/chozandrias76/world-generator
 
+rspec:
+	docker-compose exec -e RAILS_ENV=test web bundle exec rspec
+
 api:
 	docker-compose exec -e RAILS_ENV=test web bin/rails rswag
 

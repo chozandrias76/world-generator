@@ -7,6 +7,7 @@ gem "webrick", "~> 1.8"
 gem 'listen', '~> 3.8'
 gem 'rswag-api'
 gem 'rswag-ui'
+gem "rmagick", "~> 5.3"
 
 # Add other gems your project depends on
 gem 'pg' # PostgreSQL database adapter
@@ -15,6 +16,9 @@ gem 'bcrypt' # Password hashing
 gem 'dotenv-rails' # Environment variable management
 gem 'webpacker' # JavaScript asset management
 gem 'rack-cors'
+gem 'puma', '~> 5.0'
+gem 'matrix'
+
 
 # Group gems for development and testing
 group :development, :test do
@@ -28,3 +32,5 @@ end
 group :development, :production do
   gem 'bootsnap', require: false
 end
+
+gem "perlin_noise", "~> 0.1.3"

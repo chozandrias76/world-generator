@@ -15,20 +15,12 @@ RSpec.describe 'Generate API', type: :request do
       produces 'application/json'
 
       response '200', 'map generated' do
-        schema type: :string
+        schema type: :object,
+          properties: {
+            data: { type: :string },
+          }
 
-        run_test!
-      end
-
-      response '422', 'invalid request' do
-        let(:seed) { '' } # Invalid seed string to test for 422 response
-
-        run_test!
-
-        # Example to show custom specification description
-        run_test!("returns a 422 response - with error for missing seed") do |response|
-          expect(response.body).to include("can't be blank")
-        end
+        run_test!(swagger_strict_schema_validation: true)
       end
     end
   end

@@ -9,7 +9,9 @@ RUN apt-get update && \
     apt-get install -y \
     build-essential \
     nodejs \
-    postgresql-client && \
+    postgresql-client \
+    libmagickwand-dev \
+    imagemagick && \
     rm -rf /var/lib/apt/lists/*
 
 # Install gems
