@@ -19,6 +19,7 @@ gem 'pg' # PostgreSQL database adapter
 gem 'puma', '~> 5.0'
 gem 'rack-cors'
 gem 'webpacker' # JavaScript asset management
+gem 'hornetseye-openexr', '~> 1.0'
 
 # Group gems for development and testing
 group :development, :test do

@@ -12,6 +12,9 @@ RUN apt-get update && \
     postgresql-client \
     libmagickwand-dev \
     pkg-config \
+    libopenexr-dev \
+    libswscale-dev \
+    libboost-dev \
     imagemagick && \
     rm -rf /var/lib/apt/lists/*
 
