@@ -65,3 +65,4 @@ build-iPhoneSimulator/
 yarn-debug.log*
 .yarn-integrity
 log/
+public/assets/

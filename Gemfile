@@ -20,6 +20,7 @@ gem 'puma', '~> 5.0'
 gem 'rack-cors'
 gem 'webpacker' # JavaScript asset management
 gem 'hornetseye-openexr', '~> 1.0'
+gem 'react-rails'
 
 # Group gems for development and testing
 group :development, :test do
@@ -28,12 +29,16 @@ group :development, :test do
   gem 'rspec-rails' # Testing framework
   gem 'rswag-specs'
   gem 'sqlite3' # Use a development database like SQLite
+  gem 'rubocop', require: false
+  gem 'rubocop-performance', require: false
+  gem 'guard'
+  gem 'guard-livereload', '~> 2.5', require: false
+  gem 'rack-livereload'
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
+  gem 'spring'
 end
 
 group :development, :production do
   gem 'bootsnap', require: false
-  gem 'rubocop', require: false
-  gem 'rubocop-performance', require: false
-  gem 'rubocop-rails', require: false
-  gem 'rubocop-rspec', require: false
 end
