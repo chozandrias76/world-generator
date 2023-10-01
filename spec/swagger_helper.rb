@@ -21,17 +21,7 @@ RSpec.configure do |config|
         title: 'API V1',
         version: 'v1',
         description: 'This is the first version of my API'
-      },
-      servers: [
-        {
-          url: 'https://{defaultHost}',
-          variables: {
-            defaultHost: {
-                default: '127.0.0.1'
-            }
-          }
-        }
-      ]
+      }
     },
   }
 

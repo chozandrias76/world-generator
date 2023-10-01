@@ -5,28 +5,15 @@
     "version": "v1",
     "description": "This is the first version of my API"
   },
-  "servers": [
-    {
-      "url": "https://{defaultHost}",
-      "variables": {
-        "defaultHost": {
-          "default": "127.0.0.1"
-        }
-      }
-    }
-  ],
   "paths": {
     "/generate": {
-      "post": {
+      "get": {
         "summary": "Generate a new map",
         "tags": [
-          "Generate"
+          "World"
         ],
         "description": "Generate a new map based on user input",
         "operationId": "generateMap",
-        "parameters": [
-
-        ],
         "responses": {
           "200": {
             "description": "map generated",
@@ -40,15 +27,6 @@
           },
           "422": {
             "description": "invalid request"
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "string"
-              }
-            }
           }
         }
       }

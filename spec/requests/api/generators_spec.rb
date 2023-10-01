@@ -8,24 +8,16 @@ RSpec.describe 'Generate API', type: :request do
   end
 
   path '/generate' do
-    post 'Generate a new map' do
-      tags 'Generate'
+    get 'Generate a new map' do
+      tags 'World'
       description 'Generate a new map based on user input'
       operationId 'generateMap'
-      consumes 'application/json'
       produces 'application/json'
-      parameter name: :seed, in: :body, schema: { type: :string }
-
-      let(:seed) { 'your_seed_string_here' } # Replace with the seed string you want to test
 
       response '200', 'map generated' do
         schema type: :string
 
-        run_test! do |response|
-          # Call your service here and compare the response with the expected result
-          service_response = MyService.call(input_data)
-          expect(response.body).to eq({ result: service_response }.to_json)
-        end
+        run_test!
       end
 
       response '422', 'invalid request' do
