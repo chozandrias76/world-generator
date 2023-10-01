@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.configure do |config|
@@ -22,7 +20,7 @@ RSpec.configure do |config|
         version: 'v1',
         description: 'This is the first version of my API'
       }
-    },
+    }
   }
 
   # Specify the format of the output Swagger file when running 'rswag:specs:swaggerize'.

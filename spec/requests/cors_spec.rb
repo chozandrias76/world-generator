@@ -19,5 +19,4 @@ RSpec.describe 'CORS Headers', type: :request do
       expect(response.headers['Access-Control-Max-Age']).to eq('7200') # Optional: Replace with max age
     end
   end
-
 end

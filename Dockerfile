@@ -11,9 +11,11 @@ RUN apt-get update && \
     nodejs \
     postgresql-client \
     libmagickwand-dev \
+    pkg-config \
     imagemagick && \
     rm -rf /var/lib/apt/lists/*
 
+ENV PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 # Install gems
 COPY Gemfile Gemfile.lock ./
 RUN gem install bundler && \

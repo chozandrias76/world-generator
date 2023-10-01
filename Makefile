@@ -18,10 +18,22 @@ pull:
 	docker pull ghcr.io/chozandrias76/world-generator
 
 rspec:
-	docker-compose exec -e RAILS_ENV=test web bundle exec rspec
+	$(DC) exec -e RAILS_ENV=test web bundle exec rspec
 
 api:
-	docker-compose exec -e RAILS_ENV=test web bin/rails rswag
+	$(DC) exec -e RAILS_ENV=test web bin/rails rswag
+
+lint-ruby:
+	$(DC) exec web bundle exec rubocop \
+	--require rubocop-rails --require rubocop-performance \
+	-A \
+	spec/**/**/*.rb \
+	app/services/**/*.rb \
+	app/models/**/*.rb \
+	config/**/*.rb
+
+bundle:
+	$(DC) exec web bundle
 
 # Show the logs of the web container
 logs:

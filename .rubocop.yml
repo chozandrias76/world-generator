@@ -1,0 +1,19 @@
+require:
+  - rubocop-rails
+  - rubocop-performance
+  - rubocop-factory_bot
+inherit_from:
+  - https://raw.githubusercontent.com/airbnb/ruby/main/rubocop-airbnb/config/rubocop-lint.yml
+  - https://raw.githubusercontent.com/airbnb/ruby/main/rubocop-airbnb/config/rubocop-rails.yml
+  - https://raw.githubusercontent.com/airbnb/ruby/main/rubocop-airbnb/config/rubocop-bundler.yml
+  - https://raw.githubusercontent.com/airbnb/ruby/main/rubocop-airbnb/config/rubocop-metrics.yml
+  - https://raw.githubusercontent.com/airbnb/ruby/main/rubocop-airbnb/config/rubocop-naming.yml
+  - https://raw.githubusercontent.com/airbnb/ruby/main/rubocop-airbnb/config/rubocop-performance.yml
+  - https://raw.githubusercontent.com/airbnb/ruby/main/rubocop-airbnb/config/rubocop-security.yml
+  - https://raw.githubusercontent.com/airbnb/ruby/main/rubocop-airbnb/config/rubocop-rspec.yml
+
+Rspec/EmptyExampleGroup:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
